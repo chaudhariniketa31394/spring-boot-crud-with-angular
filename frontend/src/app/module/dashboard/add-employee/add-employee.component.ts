@@ -14,6 +14,7 @@ export class AddEmployeeComponent implements OnInit {
   addEmployeeForm: FormGroup
   employee: UserModel = null;
   dateChanged = false;
+  flag = false;
 
   constructor(private formBuilder: FormBuilder,
     private apiService: ApiService,
@@ -38,11 +39,12 @@ export class AddEmployeeComponent implements OnInit {
         address: this.formBuilder.control(null, Validators.required),
       });
     } else {
+      this.flag = true
       this.addEmployeeForm = this.formBuilder.group({
         firstName: this.formBuilder.control(this.employee.firstName, Validators.required),
         lastName: this.formBuilder.control(this.employee.lastName, Validators.required),
         company: this.formBuilder.control(this.employee.company, Validators.required),
-        email: this.formBuilder.control(this.employee.email, [Validators.required, Validators.email]),
+        email: this.formBuilder.control(this.employee.userName, [Validators.required, Validators.email]),
         dateOfBirth: this.formBuilder.control(this.employee.dateOfBirth, Validators.required),
         mobile: this.formBuilder.control(this.employee.mobileNo, [Validators.required, Validators.pattern(/^[789]\d{9}$/)]),
         address: this.formBuilder.control(this.employee.address, Validators.required),

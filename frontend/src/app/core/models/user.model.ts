@@ -8,5 +8,6 @@ export class UserModel{
     address?: string;
     type?: string;
     dateOfBirth?: any;
+   userName?: any;
 
 }

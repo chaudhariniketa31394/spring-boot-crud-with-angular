@@ -60,7 +60,7 @@ export class EndpointService {
      */
     this.endpoints = [
       { name: 'CREATE_USER', url: 'create-user', method: 'POST' },
-      { name: 'LOGIN', url: 'authenticate', method: 'POST' },
+      { name: 'LOGIN', url: 'login', method: 'POST' },
       { name: 'UPDATE_EMPLOYEE', url: 'update-employee', method: 'PUT' },
       { name: 'GET_ALL_EMPLYEES', url: 'employees', method: 'GET' },
       { name: 'DELETE_EMPLOYEE', url: 'delete-employee', method: 'DELETE' }
